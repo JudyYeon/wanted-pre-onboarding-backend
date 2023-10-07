@@ -1,19 +1,21 @@
 package kr.co.wanted.judy.wantedpreonboardingbackend.domain;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.Data;
 
-public class RecruitApplicants {
+@Data
+public class Applicants {
 
     @Schema(description = "지원자 ID")
-    private String applicantId;
+    private int applicantId;
 
-    @Schema(description = "이름")
+    @Schema(description = "지원자 명")
     private String name;
 
-    @Schema(description = "나이")
+    @Schema(description = "지원자 나이")
     private int age;
 
-    @Schema(description = "보유기술")
+    @Schema(description = "지원자 보유기술")
     private String skill;
 
 }

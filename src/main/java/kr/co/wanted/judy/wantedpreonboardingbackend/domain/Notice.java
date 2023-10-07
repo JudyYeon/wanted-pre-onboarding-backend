@@ -4,7 +4,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 @Data
-public class RecruitNotice {
+public class Notice {
     @Schema(description = "회사 ID")
     private int companyId;
 
