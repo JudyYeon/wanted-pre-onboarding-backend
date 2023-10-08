@@ -7,7 +7,7 @@ import lombok.Data;
 public class Applicants {
 
     @Schema(description = "지원자 ID")
-    private int applicantId;
+    private long applicantId;
 
     @Schema(description = "지원자 명")
     private String name;
