@@ -7,7 +7,7 @@ import java.util.List;
 public interface RecruitService {
 
     // 요구사항 1. 등록 유형의 서비스
-    void addNotice(Notice recruitNoticeDTO);
+    void addNotice(Notice notice);
 
     // 요구사항 2. 수정 유형의 서비스
     void modifyNotice();

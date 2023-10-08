@@ -3,12 +3,21 @@ package kr.co.wanted.judy.wantedpreonboardingbackend.domain;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 @Data
+@Entity
+@Schema(description = "Notice")
 public class Notice {
-    @Schema(description = "회사 ID")
+    @Schema(description = "회사 ID", required = true)
     private int companyId;
 
-    @Schema(description = "공고 ID")
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Schema(description = "공고 ID", hidden = true)
     private int noticeId;
 
     @Schema(description = "채용 포지션")
