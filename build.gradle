@@ -30,15 +30,15 @@ dependencies {
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+	// MariaDB
+	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client:2.7.4'
+
 	// Swagger 3.0.0
 	implementation group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
 	implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
 
 	// JPA
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-
-	// MariaDB
-	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client:2.7.4'
 }
 
 tasks.named('test') {
