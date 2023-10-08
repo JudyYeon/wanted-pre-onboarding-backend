@@ -3,22 +3,29 @@ package kr.co.wanted.judy.wantedpreonboardingbackend.domain;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Entity
 @Schema(description = "Notice")
 public class Notice {
+
+    public void update(Notice request){
+        this.area = request.getArea();
+        this.country = request.getCountry();
+        this.reward = request.getReward();
+        this.companyId = request.getCompanyId();
+
+    }
+
+    @Column(updatable = false)
     @Schema(description = "회사 ID", required = true)
-    private int companyId;
+    private long companyId;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Schema(description = "공고 ID", hidden = true)
-    private int noticeId;
+    private long noticeId;
 
     @Schema(description = "채용 포지션")
     private String position;

@@ -12,18 +12,18 @@ public class Apply {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Schema(description = "공고 ID")
-    private int noticeId;
+    private long noticeId;
     
     @Schema(description = "지원일시")
     private String applyDtTm;
 
     @Column
     @Schema(description = "회사 ID")
-    private int companyId;
+    private long companyId;
 
     @Column
     @Schema(description = "접수번호")
-    private int applyId;
+    private long applyId;
 
     @Column
     @Schema(description = "지원자 ID")

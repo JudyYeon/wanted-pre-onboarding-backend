@@ -3,14 +3,20 @@ package kr.co.wanted.judy.wantedpreonboardingbackend.domain;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+
 @Data
 public class Company {
+
+    @Id
+    @Column(updatable = false)
     @Schema(description = "회사 ID")
-    private int companyId;
+    private long companyId;
 
     @Schema(description = "회사명")
-    private int companyName;
+    private String companyName;
 
     @Schema(description = "회사 이메일")
-    private int companyEmail;
+    private String companyEmail;
 }
