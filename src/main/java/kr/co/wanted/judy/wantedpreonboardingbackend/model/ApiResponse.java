@@ -1,6 +1,6 @@
 package kr.co.wanted.judy.wantedpreonboardingbackend.model;
 
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import kr.co.wanted.judy.wantedpreonboardingbackend.model.data.EnumResponseResult;
 import lombok.Data;
 
@@ -14,12 +14,12 @@ public class ApiResponse {
         this.message = message;
     }
 
-    @ApiModelProperty(value = "응답 결과", dataType = "kr.co.wanted.judy.wantedpreonboardingbackend.model.data.EnumResponseResult", required = true)
+    @Schema(name = "응답 결과")
     EnumResponseResult result;
 
-    @ApiModelProperty(value = "응답 코드", dataType = "java.lang.String", required = true)
+    @Schema(name = "응답 코드", required = true)
     String code;
 
-    @ApiModelProperty(value = "응답 메시지", dataType = "java.lang.String", required = true)
+    @Schema(name = "응답 메시지", required = true)
     String message;
 }
