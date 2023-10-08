@@ -1,8 +1,10 @@
 package kr.co.wanted.judy.wantedpreonboardingbackend.service;
 
+import kr.co.wanted.judy.wantedpreonboardingbackend.domain.Apply;
 import kr.co.wanted.judy.wantedpreonboardingbackend.domain.Notice;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface RecruitService {
 
@@ -10,10 +12,10 @@ public interface RecruitService {
     void addNotice(Notice notice);
 
     // 요구사항 2. 수정 유형의 서비스
-    void modifyNotice();
+    void modifyNotice(final long id, final Notice params);
 
     // 요구사항 3. 삭제 유형의 서비스
-    void removeNotice();
+    void removeNotice(long id);
     
     //요구사항 4-1. 목록조회 유형의 서비스
     List<Notice> findNotice();
@@ -22,8 +24,9 @@ public interface RecruitService {
     List<Notice> searchNotice();
 
     // 요구사항 5. 상세조회 유형의 서비스
-    Notice findNoticeDetail(int id);
+    Notice findNoticeDetail(long id);
 
     // 요구사항 6. 지원자 등록 유형의 서비스
+    void apply(Apply apply);
 
 }
