@@ -3,9 +3,12 @@ package kr.co.wanted.judy.wantedpreonboardingbackend.domain;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
+import javax.persistence.Id;
+
 @Data
 public class Applicants {
 
+    @Id
     @Schema(description = "지원자 ID")
     private long applicantId;
 
