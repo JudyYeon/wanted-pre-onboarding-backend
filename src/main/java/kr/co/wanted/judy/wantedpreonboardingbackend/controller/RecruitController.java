@@ -4,7 +4,7 @@ package kr.co.wanted.judy.wantedpreonboardingbackend.controller;
 import io.swagger.annotations.Api;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
-import kr.co.wanted.judy.wantedpreonboardingbackend.Exception.RecruitException;
+import kr.co.wanted.judy.wantedpreonboardingbackend.exception.RecruitException;
 import kr.co.wanted.judy.wantedpreonboardingbackend.domain.Notice;
 import kr.co.wanted.judy.wantedpreonboardingbackend.model.ApiResponse;
 import kr.co.wanted.judy.wantedpreonboardingbackend.model.ApiResponseData;
@@ -16,7 +16,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.List;
 
 @Slf4j

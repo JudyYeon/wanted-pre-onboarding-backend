@@ -1,6 +1,6 @@
 package kr.co.wanted.judy.wantedpreonboardingbackend.service.component;
 
-import kr.co.wanted.judy.wantedpreonboardingbackend.Exception.RecruitException;
+import kr.co.wanted.judy.wantedpreonboardingbackend.exception.RecruitException;
 import kr.co.wanted.judy.wantedpreonboardingbackend.domain.Apply;
 import kr.co.wanted.judy.wantedpreonboardingbackend.domain.Notice;
 import kr.co.wanted.judy.wantedpreonboardingbackend.repository.ApplyRepository;
@@ -54,19 +54,6 @@ public class RecruitServiceImpl implements RecruitService {
         notice.setDescription(u.getDescription());
         notice.setReward(u.getReward());
         noticeRepository.save(notice);
-
-//        entity.ifPresent(t -> {
-//            if(updateParams.getArea() != null){
-//                t.setArea(updateParams.getArea());
-//            }
-//            if(updateParams.getCountry() != null){
-//                t.setCountry(updateParams.getCountry());
-//            }
-//            if(updateParams.getPosition() != null){
-//                t.setPosition(updateParams.getPosition());
-//            }
-//            noticeRepository.save(t);
-//        });
     }
 
     @Override
