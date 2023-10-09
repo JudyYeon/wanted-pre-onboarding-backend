@@ -41,6 +41,7 @@ public class RecruitServiceImpl implements RecruitService {
     * @param notice 채용공고정보 객체
     * */
     @Override
+    @Transactional
     public void addNotice(Notice notice) {
         try {
             // 채용정보 등록
@@ -81,6 +82,7 @@ public class RecruitServiceImpl implements RecruitService {
      * @param id 삭제 할 공고 ID
      * */
     @Override
+    @Transactional
     public void removeNotice(long id) {
         try{
             Optional<Notice> entity = noticeRepository.findById(id);
@@ -95,6 +97,7 @@ public class RecruitServiceImpl implements RecruitService {
      * 채용 공고 목록을 조회하는 서비스
      * */
     @Override
+    @Transactional
     public List<Notice> findNotice() {
         try {
             // 새로운 List<Notice> 생성 및 Iterator 사용
@@ -115,6 +118,7 @@ public class RecruitServiceImpl implements RecruitService {
      * @param position 검색할 분야(frontend, backend)
      * */
     @Override
+    @Transactional
     public Page<Notice> searchNotice(String keyword, Pageable pageable) {
         try {
             return noticeRepository.findByPositionContaining(keyword, pageable);
@@ -129,6 +133,7 @@ public class RecruitServiceImpl implements RecruitService {
      * @param id 조회 할 공고 ID
      * */
     @Override
+    @Transactional
     public Notice findNoticeDetail(long id) {
         try {
             return noticeRepository.findById(id).orElse(null);
@@ -143,6 +148,7 @@ public class RecruitServiceImpl implements RecruitService {
      * @param apply 지원 정보
      * */
     @Override
+    @Transactional
     public void applyNotion(Apply apply) {
         try {
             // 지원정보 등록
