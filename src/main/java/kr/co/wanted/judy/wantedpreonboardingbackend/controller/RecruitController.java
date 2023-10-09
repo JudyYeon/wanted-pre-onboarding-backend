@@ -4,8 +4,8 @@ package kr.co.wanted.judy.wantedpreonboardingbackend.controller;
 import io.swagger.annotations.Api;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
-import kr.co.wanted.judy.wantedpreonboardingbackend.exception.RecruitException;
 import kr.co.wanted.judy.wantedpreonboardingbackend.domain.Notice;
+import kr.co.wanted.judy.wantedpreonboardingbackend.exception.RecruitException;
 import kr.co.wanted.judy.wantedpreonboardingbackend.model.ApiResponse;
 import kr.co.wanted.judy.wantedpreonboardingbackend.model.ApiResponseData;
 import kr.co.wanted.judy.wantedpreonboardingbackend.model.ApiResponseList;
@@ -63,12 +63,12 @@ public class RecruitController {
     @Operation(summary = "채용정보 삭제")
     @RequestMapping(value = "/notice/{id}", method = RequestMethod.DELETE)
     public ApiResponse noticeDeletion(
-            @Parameter(name = "삭제할 채용공고 번호", required = true)
+            @Parameter(name = "id", required = true)
             @PathVariable("id") Long id){
 
         try{
             this.recruitService.removeNotice(id);   // 공고삭제 Api call
-            return new ApiResponse(EnumResponseResult.SUCCESS, "SC001", "수정성공");
+            return new ApiResponse(EnumResponseResult.SUCCESS, "SC001", "삭제성공");
 
         }catch (RecruitException e){
             // 저장 중 오류 발생
