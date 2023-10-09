@@ -4,7 +4,6 @@ import kr.co.wanted.judy.wantedpreonboardingbackend.domain.Apply;
 import kr.co.wanted.judy.wantedpreonboardingbackend.domain.Notice;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface RecruitService {
 

@@ -16,6 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Slf4j
@@ -61,10 +62,10 @@ public class RecruitController {
     }
 
     @Operation(summary = "채용정보 삭제")
-    @RequestMapping(value = "/notice", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/notice/{id}", method = RequestMethod.DELETE)
     public ApiResponse noticeDeletion(
             @Parameter(name = "삭제할 채용공고 번호", required = true)
-            @RequestParam long id){
+            @PathVariable("id") Long id){
 
         try{
             this.recruitService.removeNotice(id);   // 공고삭제 Api call
