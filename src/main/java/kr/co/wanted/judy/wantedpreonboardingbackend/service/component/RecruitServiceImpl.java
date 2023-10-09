@@ -143,7 +143,7 @@ public class RecruitServiceImpl implements RecruitService {
      * @param apply 지원 정보
      * */
     @Override
-    public void apply(Apply apply) {
+    public void applyNotion(Apply apply) {
         try {
             // 지원정보 등록
             applyRepository.save(apply);

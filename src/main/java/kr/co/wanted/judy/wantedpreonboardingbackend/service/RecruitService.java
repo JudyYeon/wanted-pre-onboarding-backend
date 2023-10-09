@@ -28,6 +28,6 @@ public interface RecruitService {
     Notice findNoticeDetail(long id);
 
     // 요구사항 6. 지원자 등록 유형의 서비스
-    void apply(Apply apply);
+    void applyNotion(Apply apply);
 
 }

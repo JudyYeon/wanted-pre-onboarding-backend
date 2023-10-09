@@ -4,6 +4,7 @@ package kr.co.wanted.judy.wantedpreonboardingbackend.controller;
 import io.swagger.annotations.Api;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import kr.co.wanted.judy.wantedpreonboardingbackend.domain.Apply;
 import kr.co.wanted.judy.wantedpreonboardingbackend.domain.Notice;
 import kr.co.wanted.judy.wantedpreonboardingbackend.exception.RecruitException;
 import kr.co.wanted.judy.wantedpreonboardingbackend.model.ApiResponse;
@@ -122,6 +123,21 @@ public class RecruitController {
         }catch (RecruitException e){
             // 저장 중 오류 발생
             return new ApiResponseList<>(EnumResponseResult.ERROR, "ER001", e.getMessage());
+        }
+    }
+
+    @Operation(summary = "지원정보 등록")
+    @RequestMapping(value = "/notice", method = RequestMethod.POST)
+    public ApiResponse applyRegister(
+            @Parameter(name = "지원 정보", required = true) @RequestBody Apply apply){
+
+        try{
+            recruitService.applyNotion(apply);   // 공고등록 Api call
+            return new ApiResponse(EnumResponseResult.SUCCESS, "SC001", "등록성공");
+
+        }catch (RecruitException e){
+            // 저장 중 오류 발생
+            return new ApiResponse(EnumResponseResult.ERROR, "ER001", e.getMessage());
         }
     }
 
