@@ -25,6 +25,18 @@ public class ApiResponseList<T> {
             e.printStackTrace();
         }
     }
+
+    public ApiResponseList(EnumResponseResult result, String code, String message) {
+        try{
+            this.result = result;
+            this.code = code;
+            this.message = message;
+            this.data = null;
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
     @Schema(description = "응답 결과", required = true)
     EnumResponseResult result = EnumResponseResult.ERROR;
 

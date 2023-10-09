@@ -13,6 +13,8 @@ import kr.co.wanted.judy.wantedpreonboardingbackend.model.data.EnumResponseResul
 import kr.co.wanted.judy.wantedpreonboardingbackend.service.RecruitService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -86,6 +88,7 @@ public class RecruitController {
             return new ApiResponseList<>(EnumResponseResult.SUCCESS, "SC001", "조회성공", rs);
 
         }catch (RecruitException e){
+            // 저장 중 오류 발생
             rs = null;
             return new ApiResponseList<>(EnumResponseResult.ERROR, "ER001", e.getMessage(), rs);
         }
@@ -101,8 +104,24 @@ public class RecruitController {
             return new ApiResponseData<>(EnumResponseResult.SUCCESS, "SC001", "조회성공", rs);
 
         }catch (RecruitException e){
+            // 저장 중 오류 발생
             rs = null;
             return new ApiResponseData<>(EnumResponseResult.ERROR, "ER001", e.getMessage(), rs);
+        }
+    }
+
+    @Operation(summary = "채용정보 키워드 검색")
+    @RequestMapping(value = "/notice-detail", method = RequestMethod.GET)
+    public ApiResponseList<Notice> noticeFindKeyword(String keyword, Pageable pageable){
+
+        Page<Notice> rs;
+        try{
+            rs = recruitService.searchNotice(keyword, pageable);   // 키워드 조회 Api call
+            return new ApiResponseList<>(EnumResponseResult.SUCCESS, "SC001", "조회성공", rs.getContent());
+
+        }catch (RecruitException e){
+            // 저장 중 오류 발생
+            return new ApiResponseList<>(EnumResponseResult.ERROR, "ER001", e.getMessage());
         }
     }
 
