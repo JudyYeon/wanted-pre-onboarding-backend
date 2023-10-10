@@ -13,7 +13,6 @@ import kr.co.wanted.judy.wantedpreonboardingbackend.model.ApiResponseList;
 import kr.co.wanted.judy.wantedpreonboardingbackend.model.data.EnumResponseResult;
 import kr.co.wanted.judy.wantedpreonboardingbackend.service.RecruitService;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.validation.annotation.Validated;
@@ -21,7 +20,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Slf4j
 @RestController
 @Api(tags = {"Recruit"})
 @RequestMapping(value = "/api/v1/wanted-recruit/")
@@ -97,7 +95,9 @@ public class RecruitController {
 
     @Operation(summary = "채용정보 상세")
     @RequestMapping(value = "/notice-detail", method = RequestMethod.GET)
-    public ApiResponseData<Notice> noticeDetail(int id){
+    public ApiResponseData<Notice> noticeDetail(
+            @Parameter(name = "noticeId")
+            @RequestParam(name = "id") int id){
 
         Notice rs;
         try{
@@ -112,8 +112,10 @@ public class RecruitController {
     }
 
     @Operation(summary = "채용정보 키워드 검색")
-    @RequestMapping(value = "/notice-detail", method = RequestMethod.GET)
-    public ApiResponseList<Notice> noticeFindKeyword(String keyword, Pageable pageable){
+    @RequestMapping(value = "/notice-search/{keyword}", method = RequestMethod.GET)
+    public ApiResponseList<Notice> noticeFindKeyword(
+            @Parameter(name = "keyword", required = true)
+            @PathVariable("keyword") String keyword, Pageable pageable){
 
         Page<Notice> rs;
         try{
@@ -127,7 +129,7 @@ public class RecruitController {
     }
 
     @Operation(summary = "지원정보 등록")
-    @RequestMapping(value = "/notice", method = RequestMethod.POST)
+    @RequestMapping(value = "/apply", method = RequestMethod.POST)
     public ApiResponse applyRegister(
             @Parameter(name = "지원 정보", required = true) @RequestBody Apply apply){
 
