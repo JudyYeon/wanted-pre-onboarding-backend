@@ -4,9 +4,12 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Data
+@Entity
+@Schema(description = "Company")
 public class Company {
 
     @Id

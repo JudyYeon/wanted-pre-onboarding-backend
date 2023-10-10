@@ -7,6 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @Data
+@Schema(description = "Apply")
 public class Apply {
 
     @Id

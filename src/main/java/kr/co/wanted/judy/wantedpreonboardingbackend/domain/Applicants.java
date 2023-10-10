@@ -3,9 +3,12 @@ package kr.co.wanted.judy.wantedpreonboardingbackend.domain;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Data
+@Entity
+@Schema(description = "Applicants")
 public class Applicants {
 
     @Id

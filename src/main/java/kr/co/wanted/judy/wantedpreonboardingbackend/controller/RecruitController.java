@@ -31,7 +31,8 @@ public class RecruitController {
     @Operation(summary = "채용정보 등록")
     @RequestMapping(value = "/notice", method = RequestMethod.POST)
     public ApiResponse noticeRegister(
-            @Parameter(name = "채용 정보", required = true) @RequestBody Notice notice){
+            @Parameter(name = "채용 정보", required = true)
+            @RequestBody Notice notice){
 
         try{
             recruitService.addNotice(notice);   // 공고등록 Api call
@@ -131,7 +132,8 @@ public class RecruitController {
     @Operation(summary = "지원정보 등록")
     @RequestMapping(value = "/apply", method = RequestMethod.POST)
     public ApiResponse applyRegister(
-            @Parameter(name = "지원 정보", required = true) @RequestBody Apply apply){
+            @Parameter(name = "지원 정보", required = true)
+            @RequestBody Apply apply){
 
         try{
             recruitService.applyNotion(apply);   // 공고등록 Api call
