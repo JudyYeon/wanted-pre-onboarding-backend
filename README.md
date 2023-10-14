@@ -17,6 +17,15 @@
 
 <br/>
 
+# [ 📚 기술 가산 요소 ]
+- ### 해당 회사가 올린 다른 채용공고 가 추가적으로 포함
+- ### 사용자는 채용공고에 지원
+- ### Unit Test 구현
+- ### README 에 요구사항 분석 및 구현 과정을 작성
+- ### Git commit 메시지 컨벤션
+
+<br/>
+
 # **[ ✅ 제출 사항 ]** 
 ### 📌 Language & Framework
 [![Java](https://img.shields.io/badge/Java-8-%230B4EA2?style=for-the-badge)](https://www.java.com/ko/)

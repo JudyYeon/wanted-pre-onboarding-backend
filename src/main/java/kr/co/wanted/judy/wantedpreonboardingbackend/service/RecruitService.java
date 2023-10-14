@@ -108,12 +108,12 @@ public class RecruitService {
 
     // 요구사항 5. 상세조회 유형의 서비스
     @Transactional
-    public Notice findNoticeDetail(long id) {
+    public Page<Notice> findNoticeDetail(long id, Pageable pageable) {
         try {
-            return noticeRepository.findById(id).orElse(null);
+            return noticeRepository.findByCompanyId(id, pageable);
 
         }catch (Exception e){
-            throw new RecruitException("등록 중 오류가 발생했습니다.");
+            throw new RecruitException("조회 중 오류가 발생했습니다.");
         }
     }
 

@@ -9,4 +9,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface NoticeRepository extends JpaRepository<Notice, Long> {
     Page<Notice> findByPositionContaining(String keyword, Pageable pageable);
+    Page<Notice> findByCompanyId(long id, Pageable pageable);
 }

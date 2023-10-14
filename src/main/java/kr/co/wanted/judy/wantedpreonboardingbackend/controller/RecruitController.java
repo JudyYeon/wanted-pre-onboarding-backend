@@ -95,20 +95,20 @@ public class RecruitController {
     }
 
     @Operation(summary = "채용정보 상세")
-    @RequestMapping(value = "/notice-detail", method = RequestMethod.GET)
-    public ApiResponseData<Notice> noticeDetail(
-            @Parameter(name = "noticeId")
-            @RequestParam(name = "id") int id){
+    @RequestMapping(value = "/notice-detail/{companyId}", method = RequestMethod.GET)
+    public ApiResponseList<Notice> noticeDetail(
+            @Parameter(name = "companyId")
+            @PathVariable("companyId") long companyId, Pageable pageable){
 
-        Notice rs;
+        Page<Notice> rs;
         try{
-            rs = recruitService.findNoticeDetail(id);   // 상세조회 Api call
-            return new ApiResponseData<>(EnumResponseResult.SUCCESS, "SC001", "조회성공", rs);
+            rs = recruitService.findNoticeDetail(companyId, pageable);   // 상세조회 Api call
+            return new ApiResponseList<>(EnumResponseResult.SUCCESS, "SC001", "조회성공", rs.getContent());
 
         }catch (RecruitException e){
             // 저장 중 오류 발생
             rs = null;
-            return new ApiResponseData<>(EnumResponseResult.ERROR, "ER001", e.getMessage(), rs);
+            return new ApiResponseList<>(EnumResponseResult.ERROR, "ER001", e.getMessage(), rs.getContent());
         }
     }
 
