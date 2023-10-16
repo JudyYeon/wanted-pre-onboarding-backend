@@ -41,13 +41,12 @@
        ⎮    ├ 📁domain
        ⎮    ├ 📁exception
        ⎮    ├ 📁model
-       ⎮    ⎮    ├ 📁data
+       ⎮    ⎮    ├ 📁type
        ⎮    ⎮    ├  ...   
        ⎮    ├ 📁repository
-       ⎮    ├ 📁service      
-       ⎮    ⎮    ├ 📁component
        ⎮    ⎮    ├  ...   
-       ⎮    ├ ...     
+       ⎮    ├ 📁service      
+       ⎮    ⎮    ├ 📃RecruitService.java 
        ⎮    ├ 📃WantedPreOnBoardingBackendApplication.java     
        ├ 📝README.md
 
