@@ -1,7 +1,7 @@
 package kr.co.wanted.judy.wantedpreonboardingbackend.model;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import kr.co.wanted.judy.wantedpreonboardingbackend.model.data.EnumResponseResult;
+import kr.co.wanted.judy.wantedpreonboardingbackend.model.type.EnumResponseResult;
 import lombok.Data;
 
 import java.util.ArrayList;
