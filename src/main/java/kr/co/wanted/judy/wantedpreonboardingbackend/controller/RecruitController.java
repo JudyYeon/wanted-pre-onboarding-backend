@@ -8,9 +8,8 @@ import kr.co.wanted.judy.wantedpreonboardingbackend.domain.Apply;
 import kr.co.wanted.judy.wantedpreonboardingbackend.domain.Notice;
 import kr.co.wanted.judy.wantedpreonboardingbackend.exception.RecruitException;
 import kr.co.wanted.judy.wantedpreonboardingbackend.model.ApiResponse;
-import kr.co.wanted.judy.wantedpreonboardingbackend.model.ApiResponseData;
 import kr.co.wanted.judy.wantedpreonboardingbackend.model.ApiResponseList;
-import kr.co.wanted.judy.wantedpreonboardingbackend.model.data.EnumResponseResult;
+import kr.co.wanted.judy.wantedpreonboardingbackend.model.type.EnumResponseResult;
 import kr.co.wanted.judy.wantedpreonboardingbackend.service.RecruitService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -107,8 +106,7 @@ public class RecruitController {
 
         }catch (RecruitException e){
             // 저장 중 오류 발생
-            rs = null;
-            return new ApiResponseList<>(EnumResponseResult.ERROR, "ER001", e.getMessage(), rs.getContent());
+            return new ApiResponseList<>(EnumResponseResult.ERROR, "ER001", e.getMessage());
         }
     }
 

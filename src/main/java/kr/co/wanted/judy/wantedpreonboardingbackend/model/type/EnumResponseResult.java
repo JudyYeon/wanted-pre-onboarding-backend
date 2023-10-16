@@ -1,4 +1,4 @@
-package kr.co.wanted.judy.wantedpreonboardingbackend.model.data;
+package kr.co.wanted.judy.wantedpreonboardingbackend.model.type;
 
 import lombok.Getter;
 
