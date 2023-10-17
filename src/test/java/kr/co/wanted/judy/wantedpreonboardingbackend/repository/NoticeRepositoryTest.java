@@ -56,7 +56,6 @@ class NoticeRepositoryTest {
 
     @Test
     void findByCompanyId() {
-
         //When
         Page<Notice> result = repository.findByCompanyId(1, PageRequest.of(0, 10));
 
