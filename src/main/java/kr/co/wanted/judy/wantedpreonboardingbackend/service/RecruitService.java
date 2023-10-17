@@ -113,6 +113,7 @@ public class RecruitService {
             return noticeRepository.findByCompanyId(id, pageable);
 
         }catch (Exception e){
+
             throw new RecruitException("조회 중 오류가 발생했습니다.");
         }
     }

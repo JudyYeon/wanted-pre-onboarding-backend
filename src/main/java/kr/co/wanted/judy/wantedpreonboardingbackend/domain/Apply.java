@@ -7,6 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @Data
+@Table(name = "apply")
 @Schema(description = "Apply")
 public class Apply {
 
@@ -14,7 +15,8 @@ public class Apply {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Schema(description = "공고 ID")
     private long noticeId;
-    
+
+    @Column
     @Schema(description = "지원일시")
     private String applyDtTm;
 
