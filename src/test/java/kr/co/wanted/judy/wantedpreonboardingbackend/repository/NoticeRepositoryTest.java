@@ -56,6 +56,13 @@ class NoticeRepositoryTest {
 
     @Test
     void findByCompanyId() {
+
+        //When
+        Page<Notice> result = repository.findByCompanyId(1, PageRequest.of(0, 10));
+
+        //Then
+        assertEquals(1, result.getTotalElements()); // 예상한 총 엔티티의 수 (예: 3)
+        assertEquals(1, result.getContent().size()); // 페이지 크기와 일치하는지 확인 (예: 3)
     }
 
 //    @Test
