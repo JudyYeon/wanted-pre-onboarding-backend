@@ -134,7 +134,7 @@ public class RecruitController {
             @RequestBody Apply apply){
 
         try{
-            recruitService.applyNotion(apply);   // 공고등록 Api call
+            recruitService.addApply(apply);   // 공고등록 Api call
             return new ApiResponse(EnumResponseResult.SUCCESS, "SC001", "등록성공");
 
         }catch (RecruitException e){

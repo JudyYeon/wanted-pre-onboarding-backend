@@ -11,14 +11,6 @@ import javax.persistence.*;
 @Schema(description = "Notice")
 public class Notice {
 
-    public void update(Notice request){
-        this.area = request.getArea();
-        this.country = request.getCountry();
-        this.reward = request.getReward();
-        this.companyId = request.getCompanyId();
-
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Schema(description = "공고 ID", hidden = true)

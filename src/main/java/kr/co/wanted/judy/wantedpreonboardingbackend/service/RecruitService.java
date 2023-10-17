@@ -36,10 +36,10 @@ public class RecruitService {
 
     // 요구사항 1. 등록 유형의 서비스
     @Transactional
-    public void addNotice(Notice notice) {
+    public Notice addNotice(Notice notice) {
         try {
             // 채용정보 등록
-            noticeRepository.save(notice);
+            return noticeRepository.save(notice);
         }catch (Exception e){
             throw new RecruitException("등록 중 오류가 발생했습니다.");
         }
@@ -120,10 +120,10 @@ public class RecruitService {
 
     // 요구사항 6. 지원자 등록 유형의 서비스
     @Transactional
-    public void applyNotion(Apply apply) {
+    public Apply addApply(Apply apply) {
         try {
             // 지원정보 등록
-            applyRepository.save(apply);
+            return applyRepository.save(apply);
         }catch (Exception e){
             throw new RecruitException("등록 중 오류가 발생했습니다.");
         }
